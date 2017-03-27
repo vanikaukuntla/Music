@@ -1,0 +1,15 @@
+<! html>
+{% extends 'savaan/base.html'%}
+
+{% block body %}
+    {% if all_albums %}
+        <h1> Here are your Albums</h1>
+        <ul>
+            {% for album in all_albums %}
+                <li> <a href="{% url 'savaan:detail' album.id %}">{{album.album_title}}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3> No Albums </h3>
+    {% endif %}
+{% endblock %}
